@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>AI-Powered Search</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>PDF Search AI</h1>
+      <p class="subtitle">Intelligent textbook search & concept linking</p>
+    </header>
+    
+    <div class="search-container">
+      <div class="search-box">
+        <span class="material-icons">search</span>
+        <input type="text" id="searchTerm" placeholder="Search for a concept...">
+      </div>
+      <button id="searchButton">
+        <span class="material-icons">arrow_forward</span>
+      </button>
+    </div>
+    
+    <div class="results-container">
+      <div id="results"></div>
+      <div id="loading" class="loading hidden">
+        <div class="spinner"></div>
+        <span>Searching...</span>
+      </div>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
