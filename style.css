@@ -181,8 +181,12 @@ button .material-icons {
 }
 
 .highlight {
-  background-color: #fce8b2;
+  background-color: rgba(255, 255, 0, 0.4);
   padding: 2px 0;
+}
+
+.pdf-highlight {
+  background-color: yellow;
 }
 
 .info-message {
@@ -194,4 +198,81 @@ button .material-icons {
 
 .info-message .material-icons {
   font-size: 20px;
+}
+
+.related-concepts {
+  margin-top: 20px;
+}
+
+.related-concepts h2 {
+  font-size: 18px;
+  color: #1a73e8;
+  margin-bottom: 10px;
+}
+
+.related-concepts ul {
+  list-style: disc inside;
+  padding-left: 20px;
+}
+
+.related-concepts ul li {
+  margin-bottom: 5px;
+  color: #202124;
+}
+
+.history-container {
+  margin-bottom: 16px;
+}
+
+.history-container label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #5f6368;
+}
+
+.history-container select {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #e8eaed;
+  border-radius: 4px;
+  font-size: 14px;
+  color: #202124;
+  background: white;
+  cursor: pointer;
+}
+
+.history-container select:focus {
+  outline: none;
+  border-color: #1a73e8;
+  box-shadow: 0 0 0 2px rgba(26, 115, 232, 0.2);
+}
+
+.loader {
+  border: 4px solid #e8eaed;
+  border-top: 4px solid #1a73e8;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.spinner {
+  width: 18px;
+  height: 18px;
+  border: 2px solid #e8eaed;
+  border-top-color: #1a73e8;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+.related-concepts ul li {
+  list-style-type: disc;
+  margin-left: 20px;
 }

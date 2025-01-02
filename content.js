@@ -68,6 +68,8 @@ if (isPDF) {
             
             Promise.all(searchPromises).then(() => {
               if (matches.length > 0) {
+                // Highlight matches in the PDF
+                highlightMatches(pdfDoc, matches, searchTerm);
                 sendResponse({
                   status: 'Search completed',
                   matches: matches,
@@ -95,4 +97,53 @@ if (isPDF) {
   }
 } else {
   console.log('Not a PDF page, content script will remain dormant');
+}
+
+// Function to highlight matches in the PDF
+async function highlightMatches(pdfDoc, matches, searchTerm) {
+  for (const match of matches) {
+    const page = await pdfDoc.getPage(match.pageNum);
+    const viewport = page.getViewport({ scale: 1.5 });
+    const container = document.querySelector(`[data-page-number='${match.pageNum}']`);
+    if (!container) continue;
+
+    const highlightLayer = document.createElement('div');
+    highlightLayer.className = 'highlight-layer';
+    highlightLayer.style.position = 'absolute';
+    highlightLayer.style.top = '0';
+    highlightLayer.style.left = '0';
+    highlightLayer.style.width = `${viewport.width}px`;
+    highlightLayer.style.height = `${viewport.height}px`;
+    highlightLayer.style.pointerEvents = 'none';
+    container.appendChild(highlightLayer);
+
+    // Since precise coordinates require text rendering details,
+    // we'll perform a simple overlay based on text indices.
+    // For precise highlighting, more advanced techniques are needed.
+
+    const regex = new RegExp(searchTerm, 'gi');
+    let matchInfo;
+    while ((matchInfo = regex.exec(match.text)) !== null) {
+      const span = document.createElement('span');
+      span.className = 'pdf-highlight';
+      span.textContent = matchInfo[0];
+
+      const range = document.createRange();
+      range.setStart(container, 0);
+      range.setEnd(container, container.childNodes.length);
+
+      const rect = range.getBoundingClientRect();
+      const highlight = document.createElement('div');
+      highlight.className = 'highlight';
+      highlight.style.position = 'absolute';
+      highlight.style.backgroundColor = 'rgba(255, 255, 0, 0.4)';
+      highlight.style.pointerEvents = 'none';
+      highlight.style.width = '100px'; // Approximate width
+      highlight.style.height = '20px'; // Approximate height
+      highlight.style.top = `${rect.top}px`;
+      highlight.style.left = `${rect.left + matchInfo.index}px`;
+
+      highlightLayer.appendChild(highlight);
+    }
+  }
 }

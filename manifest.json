@@ -13,15 +13,15 @@
     "<all_urls>"
   ],
   "web_accessible_resources": [{
-    "resources": ["libs/pdf.worker.js", "libs/pdf.js"],
+    "resources": ["libs/pdf.worker.js", "libs/pdf.js", ".env"],
     "matches": ["<all_urls>"]
   }],
   "action": {
     "default_popup": "popup.html",
     "default_icon": {
-      "16": "icons/icon16.png",
-      "48": "icons/icon48.png",
-      "128": "icons/icon128.png"
+      "16": "./icons/icon16.png",
+      "48": "./icons/icon48.png",
+      "128": "./icons/icon128.png"
     }
   },
   "background": {
@@ -35,8 +35,8 @@
     }
   ],
   "icons": {
-    "16": "icons/icon16.png",
-    "48": "icons/icon48.png",
-    "128": "icons/icon128.png"
+    "16": "./icons/icon16.png",
+    "48": "./icons/icon48.png",
+    "128": "./icons/icon128.png"
   }
 }
