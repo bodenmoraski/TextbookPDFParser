@@ -8,6 +8,16 @@ A Chrome extension that enables intelligent searching within PDF documents, help
 - Full-Text Search: Search for specific terms within PDF documents
 - Context Display: Shows search results with surrounding text for better context
 - Multiple Instance Detection: Finds and displays all occurrences of search terms
+- Search History: Google-style dropdown of previous searches
+- Progress Tracking: Shows search progress across PDF pages
+- Export Functionality: Export search results to CSV
+- Keyboard Shortcuts:
+  - `Ctrl/Cmd + F`: Focus search box
+  - `Ctrl/Cmd + E`: Export results
+- Advanced Search Options:
+  - Case sensitive search
+  - Whole word matching
+  - Page range limiting
 - User-Friendly Interface:
   - Material Design styling
   - Loading indicators
@@ -32,6 +42,13 @@ A Chrome extension that enables intelligent searching within PDF documents, help
   - Finds all instances of search terms
   - Groups nearby occurrences to avoid redundant displays
   - Provides contextual snippets around each match
+- **Search History**:
+  - Stores recent searches using Chrome's storage API
+  - Displays in a Google-style dropdown
+  - Automatically updates with new searches
+- **Progress Tracking**:
+  - Real-time updates during search
+  - Page-by-page progress indication
 - **User Interface**:
   - Real-time search feedback
   - Error handling with user-friendly messages
@@ -54,13 +71,36 @@ Currently implemented:
 - [x] Results display with context
 - [x] Material Design UI
 - [x] Keyboard shortcuts
+- [x] Search history
+- [x] Progress tracking
+- [x] Export functionality
+- [x] Advanced search options
 
 Planned features:
-- [ ] Advanced AI-powered concept linking
-- [ ] Search result highlighting in the PDF
-- [ ] Search history
-- [ ] Related terms suggestions
-- [ ] PDF file upload
+- [ ] Improved PDF highlighting:
+  - Precise text position highlighting
+  - Multiple highlight colors
+  - Highlight persistence across searches
+- [ ] Enhanced AI Integration:
+  - Concept linking and mapping
+  - Smart search suggestions
+  - Related content recommendations
+- [ ] Advanced Navigation:
+  - Jump to page functionality
+  - Thumbnail preview of results
+  - Quick navigation between matches
+- [ ] Annotation Features:
+  - Save and manage highlights
+  - Add notes to highlights
+  - Export annotations
+- [ ] Collaboration Tools:
+  - Share search results
+  - Share annotated PDFs
+  - Team workspaces
+- [ ] Performance Optimizations:
+  - Caching for faster searches
+  - Background processing for large PDFs
+  - Reduced memory usage
 
 ## Setup
 
@@ -75,3 +115,10 @@ Planned features:
    - Enable "Developer mode"
    - Click "Load unpacked"
    - Select the extension directory
+
+## Usage Tips
+
+- Use keyboard shortcuts for faster navigation
+- Export results to CSV for further analysis
+- Utilize advanced search options for precise results
+- Click on search history items to quickly repeat searches

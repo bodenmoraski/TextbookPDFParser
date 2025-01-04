@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "AI-Powered Searchable Textbook",
   "description": "Search and link concepts within PDF textbooks to enhance learning.",
-  "version": "1.0",
+  "version": "1.1",
   "permissions": [
     "activeTab",
     "scripting",
@@ -13,7 +13,7 @@
     "<all_urls>"
   ],
   "web_accessible_resources": [{
-    "resources": ["libs/pdf.worker.js", "libs/pdf.js", ".env"],
+    "resources": ["libs/pdf.worker.js", "libs/pdf.js", "content.js"],
     "matches": ["<all_urls>"]
   }],
   "action": {
@@ -30,7 +30,7 @@
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
-      "js": ["libs/pdf.js", "content.js"],
+      "js": ["content.js"],
       "run_at": "document_idle"
     }
   ],

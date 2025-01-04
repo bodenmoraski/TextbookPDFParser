@@ -17,17 +17,40 @@
       <div class="search-box">
         <span class="material-icons">search</span>
         <input type="text" id="searchTerm" placeholder="Search for a concept...">
+        <div class="search-history-dropdown hidden" id="searchHistoryDropdown">
+          <div class="history-list" id="historyList"></div>
+        </div>
       </div>
-      <button id="searchButton">
-        <span class="material-icons">arrow_forward</span>
-      </button>
+      <div class="search-controls">
+        <button id="searchButton">
+          <span class="material-icons">arrow_forward</span>
+        </button>
+        <button id="filterButton" class="icon-button">
+          <span class="material-icons">tune</span>
+        </button>
+      </div>
     </div>
     
-    <div class="history-container">
-      <label for="searchHistory">Search History:</label>
-      <select id="searchHistory">
-        <option value="" disabled selected>Select a previous search</option>
-      </select>
+    <div class="search-options hidden" id="searchOptions">
+      <div class="options-grid">
+        <label class="checkbox-label">
+          <input type="checkbox" id="caseSensitive">
+          <span>Case sensitive</span>
+        </label>
+        <label class="checkbox-label">
+          <input type="checkbox" id="wholeWord">
+          <span>Whole words only</span>
+        </label>
+        <label class="checkbox-label">
+          <input type="checkbox" id="pageRange">
+          <span>Limit to page range</span>
+        </label>
+      </div>
+      <div class="page-range-inputs hidden" id="pageRangeInputs">
+        <input type="number" id="pageStart" placeholder="Start page">
+        <span class="separator">-</span>
+        <input type="number" id="pageEnd" placeholder="End page">
+      </div>
     </div>
     
     <div class="results-container">
